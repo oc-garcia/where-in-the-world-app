@@ -1,0 +1,18 @@
+.containerLight {
+  background-color: var(--Light_Mode_BG);
+  height: 10vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1.5rem;
+  box-shadow: 0px 0px 2px 2px var(--Light_Mode_Border);
+}
+
+.TitleLight {
+  color: var(--Light_Mode_Text);
+}
+
+.iconLight {
+  height: 100%;
+  cursor: pointer;
+}

@@ -3,9 +3,10 @@
 :root {
   --Dark_Blue: hsl(209, 23%, 22%) /*(Dark Mode Elements)*/;
   --Very_Dark_Blue: hsl(207, 26%, 17%); /*(Dark Mode Background)*/
-  --Very_Dark_Blue: hsl(200, 15%, 8%); /*(Light Mode Text)*/
+  --Light_Mode_Text: rgb(17, 21, 23);
+  --Light_Mode_Border: rgb(17, 21, 23, 0.1);
   --Dark_Gray: hsl(0, 0%, 52%); /*(Light Mode Input)*/
-  --Very_Light_Gray: hsl(0, 0%, 98%); /*(Light Mode Background)*/
+  --Light_Mode_BG: hsl(0, 0%, 98%);
   --White: hsl(0, 0%, 100%); /*(Dark Mode Text & Light Mode Elements)*/
 }
 
