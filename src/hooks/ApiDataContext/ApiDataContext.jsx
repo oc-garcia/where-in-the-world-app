@@ -3,20 +3,20 @@ import { createContext, useState } from "react";
 export const ApiDataContext = createContext([]);
 
 export const ApiDataProvider = ({ children }) => {
-  const [apiData, setapiData] = useState([]);
+  const [region, setRegion] = useState([]);
 
-  const connectApi = async () => {
+  async function regionData(prmt) {
     try {
-      const response = await fetch("https://restcountries.com/v3.1/all");
+      const response = await fetch(`https://restcountries.com/v3.1/region/${prmt}`);
       const data = await response.json();
       if (data) {
         console.log(data);
-        setapiData(data);
+        setRegion(data);
       }
     } catch (e) {
       console.log(e);
     }
-  };
+  }
 
-  return <ApiDataContext.Provider value={{ apiData, connectApi }}>{children}</ApiDataContext.Provider>;
+  return <ApiDataContext.Provider value={{ region, regionData }}>{children}</ApiDataContext.Provider>;
 };

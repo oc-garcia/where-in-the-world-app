@@ -1,0 +1,29 @@
+.cardContainerLight, .cardContainerDark {
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 20%;
+  border-radius: 5px;
+}
+
+.cardContainerDark{
+    background-color: var(--Dark_Elements);
+}
+
+.cardContainerLight {
+  background-color: var(--Dark_Mode_Text);
+}
+
+.flag {
+  height: 10rem;
+  width: 20rem;
+  border: 1px solid black;
+}
+
+.nameLight,
+.subregionLight,
+.capitalLight {
+  color: var(--Light_Mode_Text);
+}

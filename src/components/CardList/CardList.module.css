@@ -1,7 +1,17 @@
-.containerLight{
-    min-height: 73vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+.containerLight {
+  background-color: var(--Light_Mode_BG);
+  min-height: 73vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.containerDark {
+  background-color: var(--Dark_Mode_BG);
+  min-height: 73vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
