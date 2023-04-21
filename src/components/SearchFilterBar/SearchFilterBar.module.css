@@ -1,0 +1,65 @@
+.containerLight {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: var(--Light_Mode_BG);
+}
+
+.containerDark {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  background-color: var(--Dark_Mode_BG);
+}
+
+.textInputLight {
+  background-color: var(--Dark_Mode_Text);
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  box-shadow: 0rem 0rem 1.5rem var(--Border-Light);
+  color: var(--Light_Mode_Text);
+  width: 35%;
+}
+
+.textInputDark {
+  background-color: var(--Dark_Elements);
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  box-shadow: 0rem 0rem 1.5rem var(--Border-Dark);
+  color: var(--Dark_Mode_Text);
+  width: 35%;
+}
+
+.textInputLight::placeholder {
+  color: var(--Light_Mode_Text);
+}
+
+.textInputDark::placeholder {
+  color: var(--Dark_Mode_Text);
+}
+
+.selectInputLight {
+  background-color: var(--Dark_Mode_Text);
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  box-shadow: 0rem 0rem 1.5rem var(--Border-Light);
+  color: var(--Light_Mode_Text);
+}
+
+.selectInputDark {
+  background-color: var(--Dark_Elements);
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  box-shadow: 0rem 0rem 1.5rem var(--Border-Dark);
+  color: var(--Dark_Mode_Text);
+}
