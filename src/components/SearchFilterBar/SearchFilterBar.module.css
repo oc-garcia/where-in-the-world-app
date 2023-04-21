@@ -20,7 +20,7 @@
   border-radius: 10px;
   border: none;
   outline: none;
-  box-shadow: 0rem 0rem 1.5rem var(--Border-Light);
+  box-shadow: 0rem 0rem 1.5rem var(--Border_Light);
   color: var(--Light_Mode_Text);
   width: 35%;
 }
@@ -31,7 +31,7 @@
   border-radius: 10px;
   border: none;
   outline: none;
-  box-shadow: 0rem 0rem 1.5rem var(--Border-Dark);
+  box-shadow: 0rem 0rem 1.5rem var(--Border_Dark);
   color: var(--Dark_Mode_Text);
   width: 35%;
 }
@@ -50,7 +50,7 @@
   border-radius: 10px;
   border: none;
   outline: none;
-  box-shadow: 0rem 0rem 1.5rem var(--Border-Light);
+  box-shadow: 0rem 0rem 1.5rem var(--Border_Light);
   color: var(--Light_Mode_Text);
 }
 
@@ -60,6 +60,6 @@
   border-radius: 10px;
   border: none;
   outline: none;
-  box-shadow: 0rem 0rem 1.5rem var(--Border-Dark);
+  box-shadow: 0rem 0rem 1.5rem var(--Border_Dark);
   color: var(--Dark_Mode_Text);
 }

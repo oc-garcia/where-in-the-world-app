@@ -4,7 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
-  border-bottom: 1px solid var(--Border-Light);
+  border-bottom: 1px solid var(--Border_Light);
 }
 
 .titleLight {
@@ -39,7 +39,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
-  border-bottom: 1px solid var(--Border-Dark);
+  border-bottom: 1px solid var(--Border_Dark);
 }
 
 .titleDark {

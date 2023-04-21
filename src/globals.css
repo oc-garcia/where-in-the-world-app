@@ -4,8 +4,8 @@
   --Dark_Elements: hsl(209, 23%, 22%) /*(Dark Mode Elements)*/;
   --Dark_Mode_BG: hsl(207, 26%, 17%); /*(Dark Mode Background)*/
   --Light_Mode_Text: rgb(17, 21, 23);
-  --Border-Light: rgb(17, 21, 23, 0.1);
-  --Border-Dark: black;
+  --Border_Light: rgb(17, 21, 23, 0.1);
+  --Border_Dark: #00111f;
   --Dark_Gray: hsl(0, 0%, 52%); /*(Light Mode Input)*/
   --Light_Mode_BG: hsl(0, 0%, 98%);
   --Dark_Mode_Text: hsl(0, 0%, 100%); /*(Dark Mode Text & Light Mode Elements)*/
