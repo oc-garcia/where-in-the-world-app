@@ -1,6 +1,6 @@
 .containerLight {
   background-color: var(--Light_Mode_BG);
-  min-height: 73vh;
+  min-height: 74vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,7 +9,7 @@
 
 .containerDark {
   background-color: var(--Dark_Mode_BG);
-  min-height: 73vh;
+  min-height: 74vh;
   display: flex;
   align-items: center;
   justify-content: center;

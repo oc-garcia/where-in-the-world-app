@@ -8,10 +8,12 @@ export default function CountryCard({ flag, name, population, subregion, capital
   return (
     <div className={theme ? styles.cardContainerLight : styles.cardContainerDark}>
       <img className={styles.flag} src={flag} />
-      <h2 className={styles.nameLight}>{name}</h2>
-      <p className={styles.populationLight}>Population: {population}</p>
-      <p className={styles.subregionLight}>Sub Region: {subregion}</p>
-      <p className={styles.capitalLight}>Capital: {capital}</p>
+      <div className={styles.textContainer}>
+        <h2 className={theme ? styles.nameLight : styles.nameDark}>{name}</h2>
+        <p className={theme ? styles.populationLight : styles.populationDark}>Population: {population}</p>
+        <p className={theme ? styles.subregionLight : styles.subregionDark}>Sub Region: {subregion}</p>
+        <p className={theme ? styles.capitalLight : styles.capitalDark}>Capital: {capital}</p>
+      </div>
     </div>
   );
 }

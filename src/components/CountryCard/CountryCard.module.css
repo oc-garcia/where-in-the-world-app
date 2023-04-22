@@ -1,29 +1,52 @@
-.cardContainerLight, .cardContainerDark {
+.cardContainerLight,
+.cardContainerDark {
+  box-sizing: border-box;
   margin: 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 20%;
+  height: 20rem;
+  width: 20rem;
   border-radius: 5px;
 }
 
-.cardContainerDark{
-    background-color: var(--Dark_Elements);
+.cardContainerDark {
+  background-color: var(--Dark_Elements);
+  box-shadow: 0rem 0rem 1.5rem var(--Border_Dark);
 }
 
 .cardContainerLight {
   background-color: var(--Dark_Mode_Text);
+  box-shadow: 0rem 0rem 1.5rem var(--Border_Light);
 }
 
 .flag {
-  height: 10rem;
+  height: 50%;
   width: 20rem;
   border: 1px solid black;
 }
 
+.textContainer {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  height: 50%;
+}
+
 .nameLight,
+.populationDark,
 .subregionLight,
 .capitalLight {
   color: var(--Light_Mode_Text);
+}
+
+.nameDark,
+.populationDark,
+.subregionDark,
+.capitalDark {
+  color: var(--Dark_Mode_Text);
 }
