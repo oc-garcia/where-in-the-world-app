@@ -1,5 +1,5 @@
-.containerLight {
-  background-color: var(--Light_Mode_BG);
+.containerLight,
+.containerDark {
   min-height: 74vh;
   display: flex;
   align-items: center;
@@ -7,11 +7,10 @@
   flex-wrap: wrap;
 }
 
+.containerLight {
+  background-color: var(--Light_Mode_BG);
+}
+
 .containerDark {
   background-color: var(--Dark_Mode_BG);
-  min-height: 74vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
 }

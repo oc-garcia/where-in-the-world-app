@@ -1,39 +1,39 @@
-.containerLight {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem;
-  background-color: var(--Light_Mode_BG);
-}
-
+.containerLight,
 .containerDark {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
+}
+
+.containerLight {
+  background-color: var(--Light_Mode_BG);
+}
+
+.containerDark {
   background-color: var(--Dark_Mode_BG);
+}
+
+.textInputLight,
+.textInputDark {
+  padding: 1rem;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+
+  width: 35%;
 }
 
 .textInputLight {
   background-color: var(--Dark_Mode_Text);
-  padding: 1rem;
-  border-radius: 10px;
-  border: none;
-  outline: none;
   box-shadow: 0rem 0rem 1.5rem var(--Border_Light);
   color: var(--Light_Mode_Text);
-  width: 35%;
 }
 
 .textInputDark {
   background-color: var(--Dark_Elements);
-  padding: 1rem;
-  border-radius: 10px;
-  border: none;
-  outline: none;
   box-shadow: 0rem 0rem 1.5rem var(--Border_Dark);
   color: var(--Dark_Mode_Text);
-  width: 35%;
 }
 
 .textInputLight::placeholder {
@@ -44,22 +44,22 @@
   color: var(--Dark_Mode_Text);
 }
 
-.selectInputLight {
-  background-color: var(--Dark_Mode_Text);
+.selectInputLight,
+.selectInputDark {
   padding: 1rem;
   border-radius: 10px;
   border: none;
   outline: none;
+}
+
+.selectInputLight {
+  background-color: var(--Dark_Mode_Text);
   box-shadow: 0rem 0rem 1.5rem var(--Border_Light);
   color: var(--Light_Mode_Text);
 }
 
 .selectInputDark {
   background-color: var(--Dark_Elements);
-  padding: 1rem;
-  border-radius: 10px;
-  border: none;
-  outline: none;
   box-shadow: 0rem 0rem 1.5rem var(--Border_Dark);
   color: var(--Dark_Mode_Text);
 }

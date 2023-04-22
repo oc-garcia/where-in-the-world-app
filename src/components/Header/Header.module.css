@@ -1,9 +1,13 @@
-.containerLight {
-  background-color: var(--Light_Mode_BG);
+.containerLight,
+.containerDark {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
+}
+
+.containerLight {
+  background-color: var(--Light_Mode_BG);
   border-bottom: 1px solid var(--Border_Light);
 }
 
@@ -35,10 +39,6 @@
 
 .containerDark {
   background-color: var(--Dark_Mode_BG);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem;
   border-bottom: 1px solid var(--Border_Dark);
 }
 
