@@ -6,11 +6,18 @@ import styles from ".//SearchFilterBar.module.css";
 
 export default function SearchFilterBar() {
   const { theme } = useContext(ThemeContext);
-  const { region, regionData } = useContext(ApiDataContext);
+  const { region, regionData, name, nameData } = useContext(ApiDataContext);
 
-  const handleChange = (event) => {
+  const handleSelectChange = (event) => {
+    nameData("");
     regionData(event.target.value);
     console.log(region);
+  };
+
+  const handleTextChange = (event) => {
+    regionData("");
+    nameData(event.target.value);
+    console.log(name);
   };
 
   return (
@@ -19,8 +26,9 @@ export default function SearchFilterBar() {
         type="text"
         placeholder="Search for a Country..."
         className={theme ? styles.textInputLight : styles.textInputDark}
+        onChange={handleTextChange}
       />
-      <select onChange={handleChange} className={theme ? styles.selectInputLight : styles.selectInputDark}>
+      <select onChange={handleSelectChange} className={theme ? styles.selectInputLight : styles.selectInputDark}>
         <option value={undefined}>Filter by Region</option>
         <option value="North America">North America</option>
         <option value="South America">South America</option>

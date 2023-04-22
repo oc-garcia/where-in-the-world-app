@@ -4,28 +4,41 @@ import { ApiDataContext } from "../../hooks/ApiDataContext/ApiDataContext";
 
 import styles from "./CardList.module.css";
 import CountryCard from "../CountryCard/CountryCard";
+import idGen from "../../services/idGen";
 
 export default function CardList() {
   const { theme } = useContext(ThemeContext);
-  const { region } = useContext(ApiDataContext);
+  const { region, name } = useContext(ApiDataContext);
   return (
     <section className={theme ? styles.containerLight : styles.containerDark}>
-      {region.length > 0 ? (
-        region.map((country) => {
-          return (
-            <CountryCard
-              key={country.area}
-              flag={country.flags.png}
-              name={country.name.common}
-              population={country.population}
-              subregion={country.subregion}
-              capital={country.capital}
-            />
-          );
-        })
-      ) : (
-        <p>teste</p>
-      )}
+      {region.length > 0
+        ? region.map((country) => {
+            return (
+              <CountryCard
+                key={idGen("REGION")}
+                flag={country.flags.png}
+                name={country.name.common}
+                population={country.population}
+                subregion={country.subregion}
+                capital={country.capital}
+              />
+            );
+          })
+        : ""}
+      {name.length > 0
+        ? name.map((country) => {
+            return (
+              <CountryCard
+                key={idGen("NAME")}
+                flag={country.flags.png}
+                name={country.name.common}
+                population={country.population}
+                subregion={country.subregion}
+                capital={country.capital}
+              />
+            );
+          })
+        : ""}
     </section>
   );
 }
