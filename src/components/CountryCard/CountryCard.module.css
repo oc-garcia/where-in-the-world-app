@@ -9,6 +9,12 @@
   height: 20rem;
   width: 20rem;
   border-radius: 5px;
+  cursor: pointer;
+}
+
+.cardContainerLight:hover,
+.cardContainerDark:hover {
+  transform: scale(1.1);
 }
 
 .cardContainerDark {
