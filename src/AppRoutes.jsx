@@ -15,6 +15,7 @@ export default function AppRoutes() {
           <ApiDataProvider>
             <Routes>
               <Route path="/" element={<Home />} />
+              <Route path="*" element={<Home />} />
             </Routes>
           </ApiDataProvider>
         </main>

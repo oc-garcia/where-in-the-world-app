@@ -8,7 +8,7 @@ import idGen from "../../services/idGen";
 
 export default function CardList() {
   const { theme } = useContext(ThemeContext);
-  const { region, name ,displayRegion, displayName } = useContext(ApiDataContext);
+  const { region, name, displayRegion, displayName } = useContext(ApiDataContext);
 
   return (
     <section className={theme ? styles.containerLight : styles.containerDark}>
@@ -40,6 +40,15 @@ export default function CardList() {
             );
           })
         : ""}
+      {displayName === false && displayRegion === false ? (
+        <div className={styles.referenceContainer}>
+          <p className={theme ? styles.instructionsLight : styles.instructionsDark}>
+            Text search will look for Country Names, Capitals and Aliases.
+          </p>
+        </div>
+      ) : (
+        ""
+      )}
     </section>
   );
 }
