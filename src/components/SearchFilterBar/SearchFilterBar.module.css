@@ -20,7 +20,6 @@
   border-radius: 10px;
   border: none;
   outline: none;
-
   width: 35%;
 }
 
@@ -37,11 +36,17 @@
 }
 
 .textInputLight::placeholder {
+  padding-left: 2rem;
   color: var(--Light_Mode_Text);
+  background-image: url("./magnifying-glass-light.svg");
+  background-repeat: no-repeat;
 }
 
 .textInputDark::placeholder {
+  padding-left: 2rem;
   color: var(--Dark_Mode_Text);
+  background-image: url("./magnifying-glass-dark.svg");
+  background-repeat: no-repeat;
 }
 
 .selectInputLight,
@@ -62,4 +67,11 @@
   background-color: var(--Dark_Elements);
   box-shadow: 0rem 0rem 1.5rem var(--Border_Dark);
   color: var(--Dark_Mode_Text);
+}
+
+@media only screen and (max-width: 600px) {
+  .textInputLight,
+  .textInputDark {
+    width: 50%;
+  }
 }
