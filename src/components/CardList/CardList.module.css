@@ -25,7 +25,7 @@
 .instructionsDark {
   position: absolute;
   font-size: x-small;
-  left:7%;
+  left: 4%;
   bottom: -20%;
 }
 
@@ -35,4 +35,11 @@
 
 .instructionsDark {
   color: var(--Dark_Mode_Text);
+}
+
+@media only screen and (max-width: 600px) {
+  instructionsLight,
+  .instructionsDark {
+    left: 7%;
+  }
 }
