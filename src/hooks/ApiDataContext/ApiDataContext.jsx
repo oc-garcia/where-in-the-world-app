@@ -7,6 +7,9 @@ export const ApiDataProvider = ({ children }) => {
 
   const [name, setName] = useState([]);
 
+  const [displayRegion, setDisplayRegion] = useState(false);
+  const [displayName, setDisplayName] = useState(false);
+
   async function regionData(prmt) {
     if (prmt === "") {
       return;
@@ -17,6 +20,8 @@ export const ApiDataProvider = ({ children }) => {
       if (data) {
         console.log(data);
         setRegion(data);
+        setDisplayRegion(true);
+        setDisplayName(false);
       }
     } catch (e) {
       console.log(e);
@@ -33,11 +38,17 @@ export const ApiDataProvider = ({ children }) => {
       if (data) {
         console.log(data);
         setName(data);
+        setDisplayRegion(false);
+        setDisplayName(true);
       }
     } catch (e) {
       console.log(e);
     }
   }
 
-  return <ApiDataContext.Provider value={{ region, regionData, name, nameData }}>{children}</ApiDataContext.Provider>;
+  return (
+    <ApiDataContext.Provider value={{ region, regionData, name, nameData, displayName, displayRegion }}>
+      {children}
+    </ApiDataContext.Provider>
+  );
 };

@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ThemeContext } from "../../hooks/ThemeContext/ThemeContext";
 import { ApiDataContext } from "../../hooks/ApiDataContext/ApiDataContext";
 
@@ -8,10 +8,11 @@ import idGen from "../../services/idGen";
 
 export default function CardList() {
   const { theme } = useContext(ThemeContext);
-  const { region, name } = useContext(ApiDataContext);
+  const { region, name ,displayRegion, displayName } = useContext(ApiDataContext);
+
   return (
     <section className={theme ? styles.containerLight : styles.containerDark}>
-      {region.length > 0
+      {region.length > 0 && displayRegion
         ? region.map((country) => {
             return (
               <CountryCard
@@ -25,7 +26,7 @@ export default function CardList() {
             );
           })
         : ""}
-      {name.length > 0
+      {name.length > 0 && displayName
         ? name.map((country) => {
             return (
               <CountryCard
