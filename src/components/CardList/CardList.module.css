@@ -38,7 +38,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-  instructionsLight,
+  .instructionsLight,
   .instructionsDark {
     left: 7%;
   }
