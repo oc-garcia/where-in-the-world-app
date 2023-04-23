@@ -43,7 +43,7 @@ export default function CardList() {
       {displayName === false && displayRegion === false ? (
         <div className={styles.referenceContainer}>
           <p className={theme ? styles.instructionsLight : styles.instructionsDark}>
-            Text search will look for Country Names, Capitals and Aliases.
+            *Text search will look for Country Names, Capitals and Aliases.
           </p>
         </div>
       ) : (
