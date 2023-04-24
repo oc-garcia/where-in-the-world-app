@@ -15,31 +15,9 @@
   background-color: var(--Dark_Mode_BG);
 }
 
-.referenceContainer {
-  align-self: flex-start;
-  position: relative;
-  width: 100%;
-}
-
-.instructionsLight,
-.instructionsDark {
-  position: absolute;
-  font-size: x-small;
-  left: 4%;
-  bottom: -20%;
-}
-
-.instructionsLight {
-  color: var(--Light_Mode_Text);
-}
-
-.instructionsDark {
-  color: var(--Dark_Mode_Text);
-}
-
 @media only screen and (max-width: 600px) {
-  .instructionsLight,
-  .instructionsDark {
-    left: 7%;
+  .containerLight,
+  .containerDark {
+    min-height: 68vh;
   }
 }

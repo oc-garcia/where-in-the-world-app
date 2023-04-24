@@ -23,12 +23,19 @@ export default function SearchFilterBar() {
   return (
     <section className={theme ? styles.containerLight : styles.containerDark}>
       <input
+        id="text"
         type="text"
         placeholder="Search for a Country..."
         className={theme ? styles.textInputLight : styles.textInputDark}
         onChange={handleTextChange}
       />
-      <select onChange={handleSelectChange} className={theme ? styles.selectInputLight : styles.selectInputDark}>
+      <p className={theme ? styles.instructionsLight : styles.instructionsDark}>
+        *Text search will look for Country Names, Capitals and Aliases.
+      </p>
+      <select
+        id="select"
+        onChange={handleSelectChange}
+        className={theme ? styles.selectInputLight : styles.selectInputDark}>
         <option value={undefined}>Filter by Region</option>
         <option value="North America">North America</option>
         <option value="South America">South America</option>

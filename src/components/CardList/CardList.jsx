@@ -1,10 +1,11 @@
 import React, { useContext, useState } from "react";
 import { ThemeContext } from "../../hooks/ThemeContext/ThemeContext";
 import { ApiDataContext } from "../../hooks/ApiDataContext/ApiDataContext";
+import { v4 as uuidv4 } from "uuid";
 
 import styles from "./CardList.module.css";
 import CountryCard from "../CountryCard/CountryCard";
-import idGen from "../../services/idGen";
+import { Link } from "react-router-dom";
 
 export default function CardList() {
   const { theme } = useContext(ThemeContext);
@@ -15,14 +16,16 @@ export default function CardList() {
       {region.length > 0 && displayRegion
         ? region.map((country) => {
             return (
-              <CountryCard
-                key={idGen("REGION")}
-                flag={country.flags.png}
-                name={country.name.common}
-                population={country.population}
-                subregion={country.subregion}
-                capital={country.capital}
-              />
+              <Link to={`details/${country.name.common}`}>
+                <CountryCard
+                  key={uuidv4()}
+                  flag={country.flags.png}
+                  name={country.name.common}
+                  population={country.population}
+                  subregion={country.subregion}
+                  capital={country.capital}
+                />
+              </Link>
             );
           })
         : ""}
@@ -30,7 +33,7 @@ export default function CardList() {
         ? name.map((country) => {
             return (
               <CountryCard
-                key={idGen("NAME")}
+                key={uuidv4()}
                 flag={country.flags.png}
                 name={country.name.common}
                 population={country.population}
@@ -40,15 +43,6 @@ export default function CardList() {
             );
           })
         : ""}
-      {displayName === false && displayRegion === false ? (
-        <div className={styles.referenceContainer}>
-          <p className={theme ? styles.instructionsLight : styles.instructionsDark}>
-            *Text search will look for Country Names, Capitals and Aliases.
-          </p>
-        </div>
-      ) : (
-        ""
-      )}
     </section>
   );
 }

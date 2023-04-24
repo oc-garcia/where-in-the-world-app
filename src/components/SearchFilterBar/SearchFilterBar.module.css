@@ -4,6 +4,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
+  position: relative;
 }
 
 .containerLight {
@@ -69,9 +70,32 @@
   color: var(--Dark_Mode_Text);
 }
 
+.instructionsLight,
+.instructionsDark {
+  width: 80%;
+  position: absolute;
+  font-size: x-small;
+  left: 3%;
+  bottom: -5%;
+}
+
+.instructionsLight {
+  color: var(--Light_Mode_Text);
+}
+
+.instructionsDark {
+  color: var(--Dark_Mode_Text);
+}
+
 @media only screen and (max-width: 600px) {
   .textInputLight,
   .textInputDark {
     width: 50%;
+  }
+
+  .instructionsLight,
+  .instructionsDark {
+    bottom: -5%;
+    left: 9%;
   }
 }
