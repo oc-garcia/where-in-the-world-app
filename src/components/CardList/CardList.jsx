@@ -16,7 +16,7 @@ export default function CardList() {
       {region.length > 0 && displayRegion
         ? region.map((country) => {
             return (
-              <Link to={`details/${country.name.common}`}>
+              <Link key={uuidv4()} to={`details/${country.name.common}`}>
                 <CountryCard
                   key={uuidv4()}
                   flag={country.flags.png}
@@ -32,7 +32,7 @@ export default function CardList() {
       {name.length > 0 && displayName
         ? name.map((country) => {
             return (
-              <Link to={`details/${country.name.common}`}>
+              <Link key={uuidv4()} to={`details/${country.name.common}`}>
                 <CountryCard
                   key={uuidv4()}
                   flag={country.flags.png}

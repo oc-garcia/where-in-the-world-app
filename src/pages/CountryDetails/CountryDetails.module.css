@@ -6,6 +6,7 @@
   justify-content: center;
   flex-wrap: wrap;
   padding: 5%;
+  position: relative;
 }
 
 .containerLight {
@@ -20,7 +21,60 @@
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
+}
+
+.flagContainer {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.flagLight {
+  width: 100%;
+  border: 1px solid var(--Border_Light);
+}
+
+.flagDark {
+  width: 100%;
+  border: 1px solid var(--Border_Dark);
+}
+
+.textLight {
+  color: var(--Light_Mode_Text);
+}
+
+.textDark {
+  color: var(--Dark_Mode_Text);
+}
+
+.infoContainer {
+  width: 100%;
+  flex: 1;
+}
+
+.buttonLight,
+.buttonDark {
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  padding: 1rem 3rem;
+  cursor: pointer;
+}
+
+.buttonLight {
+  background-color: var(--Dark_Mode_Text);
+  box-shadow: 0rem 0rem 1.5rem var(--Border_Light);
+  color: var(--Light_Mode_Text);
+}
+
+.buttonDark {
+  background-color: var(--Dark_Elements);
+  box-shadow: 0rem 0rem 1.5rem var(--Border_Dark);
+  color: var(--Dark_Mode_Text);
 }
 
 @media only screen and (max-width: 600px) {
