@@ -43,7 +43,7 @@
 }
 
 .nameLight,
-.populationDark,
+.populationLight,
 .subregionLight,
 .capitalLight {
   color: var(--Light_Mode_Text);

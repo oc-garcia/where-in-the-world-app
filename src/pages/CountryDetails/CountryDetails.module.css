@@ -1,0 +1,31 @@
+.containerLight,
+.containerDark {
+  min-height: 84.5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 5%;
+}
+
+.containerLight {
+  background-color: var(--Light_Mode_BG);
+}
+
+.containerDark {
+  background-color: var(--Dark_Mode_BG);
+}
+
+.cardContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+  .containerLight,
+  .containerDark {
+    min-height: 68vh;
+  }
+}

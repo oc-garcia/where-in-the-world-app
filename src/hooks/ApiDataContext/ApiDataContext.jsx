@@ -7,7 +7,7 @@ export const ApiDataProvider = ({ children }) => {
 
   const [name, setName] = useState([]);
 
-  const [detailedCountry, setDetailedCountry] = useState();
+  const [detailedCountry, setDetailedCountry] = useState([]);
 
   const [displayRegion, setDisplayRegion] = useState(false);
   const [displayName, setDisplayName] = useState(false);
@@ -40,7 +40,7 @@ export const ApiDataProvider = ({ children }) => {
       if (data) {
         console.log(data);
         setName(data);
-        setDetailedCountry(data)
+        setDetailedCountry(data);
         setDisplayRegion(false);
         setDisplayName(true);
       }
@@ -49,21 +49,23 @@ export const ApiDataProvider = ({ children }) => {
     }
   }
 
-    async function detailsData(prmt) {
-      if (prmt === "") {
-        return;
-      }
-      try {
-        const response = await fetch(`https://restcountries.com/v3.1/name/${prmt}?fullText=true`);
-        const data = await response.json();
-        if (data) {
-          console.log(data);
-          setDetailedCountry(data);
-        }
-      } catch (e) {
-        console.log(e);
-      }
+  async function detailsData(prmt) {
+    setDetailedCountry([]);
+    if (prmt === "") {
+      return;
     }
+    try {
+      const response = await fetch(`https://restcountries.com/v3.1/name/${prmt}?fullText=true`);
+      const data = await response.json();
+      if (data) {
+        console.log(data);
+        setDetailedCountry(data);
+        console.log(detailedCountry);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
 
   return (
     <ApiDataContext.Provider
