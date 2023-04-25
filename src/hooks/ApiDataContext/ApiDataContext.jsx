@@ -66,7 +66,7 @@ export const ApiDataProvider = ({ children }) => {
     });
 
     try {
-      const response = await fetch(`https://restcountries.com/v3.1/alpha?codes=CAN,MEX`);
+      const response = await fetch(`https://restcountries.com/v3.1/alpha?codes=${borderString}`);
       const data = await response.json();
       if (data) {
         setBorder(data);
