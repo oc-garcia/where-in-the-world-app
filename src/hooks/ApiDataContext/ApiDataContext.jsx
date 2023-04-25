@@ -9,10 +9,11 @@ export const ApiDataProvider = ({ children }) => {
 
   const [detailedCountry, setDetailedCountry] = useState([]);
 
-  const [border, setBorder] = useState([]);
+  const [borders, setBorder] = useState([]);
 
   const [displayRegion, setDisplayRegion] = useState(false);
   const [displayName, setDisplayName] = useState(false);
+  const [borderString, setBorderString] = useState("");
 
   async function regionData(prmt) {
     setName([]);
@@ -54,6 +55,28 @@ export const ApiDataProvider = ({ children }) => {
     }
   }
 
+  async function borderData(prmt) {
+    if (prmt.lenght === 0) {
+      return;
+    }
+
+    prmt.map((border) => {
+      setBorderString(border.borders.join(","));
+      console.log(borderString);
+    });
+
+    try {
+      const response = await fetch(`https://restcountries.com/v3.1/alpha?codes=CAN,MEX`);
+      const data = await response.json();
+      if (data) {
+        setBorder(data);
+        console.log(borders);
+      }
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   async function detailsData(prmt) {
     setDetailedCountry([]);
     if (prmt === "") {
@@ -64,24 +87,6 @@ export const ApiDataProvider = ({ children }) => {
       const data = await response.json();
       if (data) {
         setDetailedCountry(data);
-        console.log(data);
-      }
-    } catch (e) {
-      console.log(e);
-    }
-  }
-
-  async function borderData(prmt) {
-    setBorder([]);
-    if (prmt === "") {
-      return;
-    }
-    try {
-      const response = await fetch(`https://restcountries.com/v3.1/alpha?codes={code},{code},{code}`);
-      const data = await response.json();
-      if (data) {
-        setBorder(data);
-        console.log(data);
       }
     } catch (e) {
       console.log(e);
@@ -90,7 +95,18 @@ export const ApiDataProvider = ({ children }) => {
 
   return (
     <ApiDataContext.Provider
-      value={{ region, regionData, name, nameData, displayName, displayRegion, detailedCountry, detailsData }}>
+      value={{
+        region,
+        regionData,
+        name,
+        nameData,
+        displayName,
+        displayRegion,
+        detailedCountry,
+        detailsData,
+        borders,
+        borderData,
+      }}>
       {children}
     </ApiDataContext.Provider>
   );
