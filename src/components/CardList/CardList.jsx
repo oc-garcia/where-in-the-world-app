@@ -2,10 +2,10 @@ import React, { useContext, useState } from "react";
 import { ThemeContext } from "../../hooks/ThemeContext/ThemeContext";
 import { ApiDataContext } from "../../hooks/ApiDataContext/ApiDataContext";
 import { v4 as uuidv4 } from "uuid";
+import { Link } from "react-router-dom";
 
 import styles from "./CardList.module.css";
 import CountryCard from "../CountryCard/CountryCard";
-import { Link } from "react-router-dom";
 
 export default function CardList() {
   const { theme } = useContext(ThemeContext);

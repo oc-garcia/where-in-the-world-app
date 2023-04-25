@@ -88,6 +88,7 @@ export const ApiDataProvider = ({ children }) => {
       const data = await response.json();
       if (data) {
         setDetailedCountry(data);
+        console.log(detailedCountry);
       }
     } catch (e) {
       console.log(e);

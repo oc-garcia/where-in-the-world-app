@@ -12,20 +12,12 @@ export default function CountryDetails() {
   const { theme } = useContext(ThemeContext);
   const { detailsData, borderData, detailedCountry, borders } = useContext(ApiDataContext);
 
-  const getDetailsData = async () => {
-    await detailsData(countryName.name);
-  };
-
-  const getBorderData = async () => {
-    await borderData(detailedCountry);
-  };
-
   useEffect(() => {
-    getDetailsData();
+    detailsData(countryName.name);
   }, []);
 
   useEffect(() => {
-    getBorderData();
+    borderData(detailedCountry);
   }, [detailedCountry]);
 
   return (
