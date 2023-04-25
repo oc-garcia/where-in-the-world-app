@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { ThemeContext } from "../../hooks/ThemeContext/ThemeContext";
 import { ApiDataContext } from "../../hooks/ApiDataContext/ApiDataContext";
 import { v4 as uuidv4 } from "uuid";
@@ -17,7 +17,9 @@ export default function CountryDetails() {
 
   return (
     <main className={theme ? styles.containerLight : styles.containerDark}>
-      <button className={theme ? styles.buttonLight : styles.buttonDark}>Back</button>
+      <Link to={"/"}>
+        <button className={theme ? styles.buttonLight : styles.buttonDark}>Back</button>
+      </Link>
       {detailedCountry.map((detail) => {
         return (
           <section key={uuidv4()} className={styles.cardContainer}>

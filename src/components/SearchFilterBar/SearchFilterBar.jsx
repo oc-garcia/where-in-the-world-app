@@ -11,13 +11,11 @@ export default function SearchFilterBar() {
   const handleSelectChange = (event) => {
     nameData("");
     regionData(event.target.value);
-    console.log(region);
   };
 
   const handleTextChange = (event) => {
     regionData("");
     nameData(event.target.value);
-    console.log(name);
   };
 
   return (
