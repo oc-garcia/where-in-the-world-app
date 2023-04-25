@@ -10,9 +10,9 @@ export default function BorderButton() {
 
   return (
     <>
-      {/*Object.values(borders).map((border) => (
+      {Object.values(borders).map((border) => (
         <Link to={`details/${border.name.common}`}>{border.name.common}</Link>
-      ))*/}
+      ))}
     </>
   );
 }
