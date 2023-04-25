@@ -10,11 +10,23 @@ import BorderButton from "../../components/BorderButton/BorderButton";
 export default function CountryDetails() {
   const countryName = useParams();
   const { theme } = useContext(ThemeContext);
-  const { detailsData } = useContext(ApiDataContext);
+  const { detailsData, borderData, detailedCountry, borders } = useContext(ApiDataContext);
+
+  const getDetailsData = async () => {
+    await detailsData(countryName.name);
+  };
+
+  const getBorderData = async () => {
+    await borderData(detailedCountry);
+  };
 
   useEffect(() => {
-    detailsData(countryName.name);
+    getDetailsData();
   }, []);
+
+  useEffect(() => {
+    getBorderData();
+  }, [detailedCountry]);
 
   return (
     <>
@@ -24,9 +36,7 @@ export default function CountryDetails() {
         </Link>
         <DetailedCard />
       </main>
-      <aside>
-        <BorderButton />
-      </aside>
+      <aside>{<BorderButton />}</aside>
     </>
   );
 }

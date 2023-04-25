@@ -46,11 +46,11 @@ export default function DetailedCard() {
                 </p>
                 <p className={theme ? styles.TextLight : styles.textDark}>
                   <strong>Currencies: </strong>
-                  {Object.keys(detail.currencies).map((key) => ` ${key}`)}
+                  {Object.keys(detail.currencies).join(",")}
                 </p>
                 <p className={theme ? styles.TextLight : styles.textDark}>
                   <strong>Languages: </strong>
-                  {Object.values(detail.languages).map((value) => ` ${value}`)}
+                  {Object.values(detail.languages).join(", ")}
                 </p>
                 <p className={theme ? styles.TextLight : styles.textDark}>
                   <strong>Independent: </strong>

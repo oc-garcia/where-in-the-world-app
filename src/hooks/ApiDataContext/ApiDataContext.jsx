@@ -70,7 +70,8 @@ export const ApiDataProvider = ({ children }) => {
       const data = await response.json();
       if (data) {
         setBorder(data);
-        console.log(borders);
+      } else {
+        return;
       }
     } catch (e) {
       console.log(e);

@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { ThemeContext } from "../../hooks/ThemeContext/ThemeContext";
 import { ApiDataContext } from "../../hooks/ApiDataContext/ApiDataContext";
 
@@ -8,16 +8,11 @@ export default function BorderButton() {
   const { theme } = useContext(ThemeContext);
   const { detailedCountry, borders, borderData } = useContext(ApiDataContext);
 
-  useEffect(() => {
-    borderData(detailedCountry);
-  }, [detailedCountry]);
-
   return (
     <>
-      {/*borders.map((border) => (
+      {/*Object.values(borders).map((border) => (
         <Link to={`details/${border.name.common}`}>{border.name.common}</Link>
       ))*/}
     </>
   );
 }
-
