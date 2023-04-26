@@ -55,28 +55,35 @@ export const ApiDataProvider = ({ children }) => {
     }
   }
 
-  async function borderData(prmt) {
-    if (prmt.lenght === 0) {
-      return;
-    }
-
+  function getBorderString(prmt) {
     prmt.map((border) => {
+      console.log(border.borders.join(","));
       setBorderString(border.borders.join(","));
-      console.log(borderString);
+      return;
     });
-
-    try {
-      const response = await fetch(`https://restcountries.com/v3.1/alpha?codes=${borderString}`);
-      const data = await response.json();
-      if (data) {
-        setBorder(data);
-      } else {
-        return;
-      }
-    } catch (e) {
-      console.log(e);
-    }
   }
+  // async function borderData(prmt) {
+  //   if (prmt.lenght === 0) {
+  //     return;
+  //   }
+
+  //   prmt.map((border) => {
+  //     setBorderString(border.borders.join(","));
+  //     console.log(borderString);
+  //   });
+
+  //   try {
+  //     const response = await fetch(`https://restcountries.com/v3.1/alpha?codes=${borderString}`);
+  //     const data = await response.json();
+  //     if (data) {
+  //       setBorder(data);
+  //     } else {
+  //       return;
+  //     }
+  //   } catch (e) {
+  //     console.log(e);
+  //   }
+  // }
 
   async function detailsData(prmt) {
     setDetailedCountry([]);
@@ -85,13 +92,26 @@ export const ApiDataProvider = ({ children }) => {
     }
     try {
       const response = await fetch(`https://restcountries.com/v3.1/name/${prmt}?fullText=true`);
-      const data = await response.json();
-      if (data) {
-        setDetailedCountry(data);
+      const dataDetails = await response.json();
+      if (dataDetails) {
+        setDetailedCountry(dataDetails);
+        getBorderString(dataDetails);
         console.log(detailedCountry);
+        console.log(borders);
       }
     } catch (e) {
       console.log(e);
+    } finally {
+      try {
+        const response = await fetch(`https://restcountries.com/v3.1/alpha?codes=${borderString}`);
+        const dataBorder = await response.json();
+        if (dataBorder) {
+          setBorder(dataBorder);
+          console.log(borders);
+        }
+      } catch (e) {
+        console.log(e);
+      }
     }
   }
 
@@ -107,7 +127,7 @@ export const ApiDataProvider = ({ children }) => {
         detailedCountry,
         detailsData,
         borders,
-        borderData,
+        //borderData,
       }}>
       {children}
     </ApiDataContext.Provider>

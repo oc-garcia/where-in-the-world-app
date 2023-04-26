@@ -10,15 +10,13 @@ import BorderButton from "../../components/BorderButton/BorderButton";
 export default function CountryDetails() {
   const countryName = useParams();
   const { theme } = useContext(ThemeContext);
-  const { detailsData, borderData, detailedCountry, borders } = useContext(ApiDataContext);
+  const { detailsData, borders } = useContext(ApiDataContext);
 
   useEffect(() => {
-    detailsData(countryName.name);
+    if (detailsData !== countryName.name) {
+      detailsData(countryName.name);
+    }
   }, []);
-
-  useEffect(() => {
-    borderData(detailedCountry);
-  }, [detailedCountry]);
 
   return (
     <>
