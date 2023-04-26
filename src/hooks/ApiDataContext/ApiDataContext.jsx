@@ -13,7 +13,6 @@ export const ApiDataProvider = ({ children }) => {
 
   const [displayRegion, setDisplayRegion] = useState(false);
   const [displayName, setDisplayName] = useState(false);
-  const [borderString, setBorderString] = useState("");
 
   async function regionData(prmt) {
     setName([]);
@@ -55,63 +54,27 @@ export const ApiDataProvider = ({ children }) => {
     }
   }
 
-  function getBorderString(prmt) {
-    prmt.map((border) => {
-      console.log(border.borders.join(","));
-      setBorderString(border.borders.join(","));
-      return;
-    });
-  }
-  // async function borderData(prmt) {
-  //   if (prmt.lenght === 0) {
-  //     return;
-  //   }
-
-  //   prmt.map((border) => {
-  //     setBorderString(border.borders.join(","));
-  //     console.log(borderString);
-  //   });
-
-  //   try {
-  //     const response = await fetch(`https://restcountries.com/v3.1/alpha?codes=${borderString}`);
-  //     const data = await response.json();
-  //     if (data) {
-  //       setBorder(data);
-  //     } else {
-  //       return;
-  //     }
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // }
-
   async function detailsData(prmt) {
-    setDetailedCountry([]);
-    if (prmt === "") {
-      return;
-    }
     try {
-      const response = await fetch(`https://restcountries.com/v3.1/name/${prmt}?fullText=true`);
-      const dataDetails = await response.json();
+      const responseDetails = await fetch(`https://restcountries.com/v3.1/name/${prmt}?fullText=true`);
+      const dataDetails = await responseDetails.json();
       if (dataDetails) {
-        setDetailedCountry(dataDetails);
-        getBorderString(dataDetails);
-        console.log(detailedCountry);
-        console.log(borders);
+        const borderString = dataDetails[0].borders.join(",");
+        try {
+          const responseBorder = await fetch(`https://restcountries.com/v3.1/alpha?codes=${borderString}`);
+          const dataBorder = await responseBorder.json();
+          if (dataBorder) {
+            console.log(dataBorder);
+            setBorder(dataBorder);
+            console.log(borders);
+            setDetailedCountry(dataDetails);
+          }
+        } catch (e) {
+          console.log(e);
+        }
       }
     } catch (e) {
       console.log(e);
-    } finally {
-      try {
-        const response = await fetch(`https://restcountries.com/v3.1/alpha?codes=${borderString}`);
-        const dataBorder = await response.json();
-        if (dataBorder) {
-          setBorder(dataBorder);
-          console.log(borders);
-        }
-      } catch (e) {
-        console.log(e);
-      }
     }
   }
 
@@ -126,8 +89,7 @@ export const ApiDataProvider = ({ children }) => {
         displayRegion,
         detailedCountry,
         detailsData,
-        borders,
-        //borderData,
+        borders
       }}>
       {children}
     </ApiDataContext.Provider>

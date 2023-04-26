@@ -3,6 +3,7 @@ import { ThemeContext } from "../../hooks/ThemeContext/ThemeContext";
 import { ApiDataContext } from "../../hooks/ApiDataContext/ApiDataContext";
 import { v4 as uuidv4 } from "uuid";
 import styles from "./DetailedCard.module.css";
+import BorderButton from "../BorderButton/BorderButton";
 
 export default function DetailedCard() {
   const { theme } = useContext(ThemeContext);

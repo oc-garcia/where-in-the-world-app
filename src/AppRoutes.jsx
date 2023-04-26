@@ -15,7 +15,7 @@ export default function AppRoutes() {
         <Header />
         <ApiDataProvider>
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route exact path="/" element={<Home />} />
             <Route path="details/:name" element={<CountryDetails />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
