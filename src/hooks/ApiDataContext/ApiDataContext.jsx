@@ -75,7 +75,7 @@ export const ApiDataProvider = ({ children }) => {
               setDetailedCountry(dataDetails);
               setTimeout(() => {
                 setLoaded(true);
-              }, "1000");
+              }, "500");
             }
           } catch (e) {
             console.log(e);
@@ -83,7 +83,7 @@ export const ApiDataProvider = ({ children }) => {
         } else {
           setTimeout(() => {
             setLoaded(true);
-          }, "1000");
+          }, "500");
         }
       }
     } catch (e) {

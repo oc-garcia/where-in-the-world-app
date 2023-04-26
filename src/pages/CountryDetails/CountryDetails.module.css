@@ -1,6 +1,6 @@
 .containerLight,
 .containerDark {
-  min-height: 70vh;
+  min-height: 76vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -58,9 +58,30 @@
   background-color: var(--Dark_Mode_BG);
 }
 
+.loaderContainerLight,
+.loaderContainerDark {
+  min-height: 86vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loaderContainerLight {
+  background-color: var(--Light_Mode_BG);
+}
+
+.loaderContainerDark {
+  background-color: var(--Dark_Mode_BG);
+}
+
 @media only screen and (max-width: 600px) {
   .containerLight,
   .containerDark {
     min-height: 68vh;
+  }
+
+  .loaderContainerLight,
+  .loaderContainerDark {
+    min-height: 77vh;
   }
 }

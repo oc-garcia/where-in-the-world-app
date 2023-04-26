@@ -31,7 +31,7 @@ export default function CountryDetails() {
     );
   } else {
     return (
-      <main className={theme ? styles.containerLight : styles.containerDark}>
+      <main className={theme ? styles.loaderContainerLight : styles.loaderContainerDark}>
         <Loader />
       </main>
     );
