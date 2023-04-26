@@ -1,0 +1,30 @@
+.containerLight,
+.containerDark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.containerLight {
+  background-color: var(--Light_Mode_BG);
+}
+
+.containerDark {
+  background-color: var(--Dark_Mode_BG);
+}
+
+.loader {
+  border-radius: 50%;
+  width: 5rem;
+  padding: 1rem;
+  animation: rotation 1.5s infinite linear;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

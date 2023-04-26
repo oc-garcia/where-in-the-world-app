@@ -13,6 +13,7 @@ export const ApiDataProvider = ({ children }) => {
 
   const [displayRegion, setDisplayRegion] = useState(false);
   const [displayName, setDisplayName] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   async function regionData(prmt) {
     setName([]);
@@ -55,6 +56,7 @@ export const ApiDataProvider = ({ children }) => {
   }
 
   async function detailsData(prmt) {
+    setLoaded(false);
     setDetailedCountry([]);
     setBorder([]);
     try {
@@ -71,10 +73,17 @@ export const ApiDataProvider = ({ children }) => {
             if (dataBorder) {
               setBorder(dataBorder);
               setDetailedCountry(dataDetails);
+              setTimeout(() => {
+                setLoaded(true);
+              }, "1000");
             }
           } catch (e) {
             console.log(e);
           }
+        } else {
+          setTimeout(() => {
+            setLoaded(true);
+          }, "1000");
         }
       }
     } catch (e) {
@@ -94,6 +103,7 @@ export const ApiDataProvider = ({ children }) => {
         detailedCountry,
         detailsData,
         borders,
+        loaded,
       }}>
       {children}
     </ApiDataContext.Provider>
