@@ -12,14 +12,19 @@ export default function BorderButton() {
 
   return (
     <>
-      {Object.values(borders).map((border) =>
-        border === undefined ? (
-          ""
-        ) : (
-          <Link key={uuidv4()} to={`../details/${border.name?.common}`}>
-            <button className={theme ? styles.buttonLight : styles.buttonDark}>{border.name?.common}</button>
-          </Link>
-        )
+      {borders.length === 0 ? (
+        <p className={theme ? styles.texLight : styles.textDark}>Island Country</p>
+      ) : (
+        <>
+          <p className={theme ? styles.texLight : styles.textDark}>Border Countries:</p>
+          <div className={styles.buttonContainer}>
+            {Object.values(borders).map((border) => (
+              <Link key={uuidv4()} to={`../details/${border.name?.common}`}>
+                <button className={theme ? styles.buttonLight : styles.buttonDark}>{border.name?.common}</button>
+              </Link>
+            ))}
+          </div>
+        </>
       )}
     </>
   );

@@ -1,6 +1,6 @@
 .containerLight,
 .containerDark {
-  min-height: 76vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,7 +45,7 @@
   padding: 2rem;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
 }

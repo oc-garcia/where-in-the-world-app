@@ -17,3 +17,19 @@
   box-shadow: 0rem 0rem 1.5rem var(--Border_Dark);
   color: var(--Dark_Mode_Text);
 }
+
+.buttonContainer{
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.textLight {
+  color: var(--Light_Mode_Text);
+}
+
+.textDark {
+  color: var(--Dark_Mode_Text);
+}
