@@ -9,7 +9,11 @@ To install and run the app locally, follow these steps:
 1. Clone the repository: `git clone https://github.com/oc-garcia/where-in-the-world-app.git`
 2. Install dependencies: `npm install`
 3. Start the app: `npm run dev`
-4. Open the app in the localhost apointed by the browser.
+4. Open the URL provided in your terminal output.
+
+## Deployment
+
+The app is deployed on [https://where-in-the-world-app-ebon.vercel.app/](https://where-in-the-world-app-ebon.vercel.app/).
 
 ## Technologies
 
