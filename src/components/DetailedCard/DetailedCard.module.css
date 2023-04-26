@@ -6,6 +6,7 @@
 }
 
 .flagContainer {
+  padding: 1rem 0rem;
   width: 100%;
   flex: 1;
   display: flex;
@@ -36,8 +37,8 @@
 }
 
 @media only screen and (max-width: 600px) {
-.cardContainer{
-  margin-top: 5rem;
-  flex-direction: column;
-}
+  .cardContainer {
+    margin-top: 5rem;
+    flex-direction: column;
   }
+}
