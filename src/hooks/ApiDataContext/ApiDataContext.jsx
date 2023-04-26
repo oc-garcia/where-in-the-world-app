@@ -55,20 +55,26 @@ export const ApiDataProvider = ({ children }) => {
   }
 
   async function detailsData(prmt) {
+    setDetailedCountry([]);
+    setBorder([]);
     try {
       const responseDetails = await fetch(`https://restcountries.com/v3.1/name/${prmt}?fullText=true`);
       const dataDetails = await responseDetails.json();
       if (dataDetails) {
-        const borderString = dataDetails[0].borders.join(",");
-        try {
-          const responseBorder = await fetch(`https://restcountries.com/v3.1/alpha?codes=${borderString}`);
-          const dataBorder = await responseBorder.json();
-          if (dataBorder) {
-            setBorder(dataBorder);
-            setDetailedCountry(dataDetails);
+        setDetailedCountry(dataDetails);
+        if (dataDetails[0].borders !== undefined) {
+          const borderString = dataDetails[0].borders.join(",");
+
+          try {
+            const responseBorder = await fetch(`https://restcountries.com/v3.1/alpha?codes=${borderString}`);
+            const dataBorder = await responseBorder.json();
+            if (dataBorder) {
+              setBorder(dataBorder);
+              setDetailedCountry(dataDetails);
+            }
+          } catch (e) {
+            console.log(e);
           }
-        } catch (e) {
-          console.log(e);
         }
       }
     } catch (e) {
@@ -87,7 +93,7 @@ export const ApiDataProvider = ({ children }) => {
         displayRegion,
         detailedCountry,
         detailsData,
-        borders
+        borders,
       }}>
       {children}
     </ApiDataContext.Provider>
