@@ -1,0 +1,19 @@
+.buttonLight,
+.buttonDark {
+  border: none;
+  border-radius: 5px;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+}
+
+.buttonLight {
+  background-color: var(--Dark_Mode_Text);
+  box-shadow: 0rem 0rem 1.5rem var(--Border_Light);
+  color: var(--Light_Mode_Text);
+}
+
+.buttonDark {
+  background-color: var(--Dark_Elements);
+  box-shadow: 0rem 0rem 1.5rem var(--Border_Dark);
+  color: var(--Dark_Mode_Text);
+}

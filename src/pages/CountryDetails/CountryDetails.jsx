@@ -23,7 +23,7 @@ export default function CountryDetails() {
         </Link>
         <DetailedCard />
       </main>
-      <aside>{<BorderButton />}</aside>
+      <aside className={theme ? styles.buttonContainerLight : styles.buttonContainerDark}>{<BorderButton />}</aside>
     </>
   );
 }

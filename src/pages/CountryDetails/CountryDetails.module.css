@@ -1,6 +1,6 @@
 .containerLight,
 .containerDark {
-  min-height: 84.5vh;
+  min-height: 76vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,7 +16,6 @@
 .containerDark {
   background-color: var(--Dark_Mode_BG);
 }
-
 
 .buttonLight,
 .buttonDark {
@@ -39,6 +38,24 @@
   background-color: var(--Dark_Elements);
   box-shadow: 0rem 0rem 1.5rem var(--Border_Dark);
   color: var(--Dark_Mode_Text);
+}
+
+.buttonContainerLight,
+.buttonContainerDark {
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.buttonContainerLight {
+  background-color: var(--Light_Mode_BG);
+}
+
+.buttonContainerDark {
+  background-color: var(--Dark_Mode_BG);
 }
 
 @media only screen and (max-width: 600px) {

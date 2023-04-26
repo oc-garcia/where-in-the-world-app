@@ -64,9 +64,7 @@ export const ApiDataProvider = ({ children }) => {
           const responseBorder = await fetch(`https://restcountries.com/v3.1/alpha?codes=${borderString}`);
           const dataBorder = await responseBorder.json();
           if (dataBorder) {
-            console.log(dataBorder);
             setBorder(dataBorder);
-            console.log(borders);
             setDetailedCountry(dataDetails);
           }
         } catch (e) {

@@ -10,9 +10,6 @@ export default function BorderButton() {
   const { theme } = useContext(ThemeContext);
   const { borders } = useContext(ApiDataContext);
 
-  useEffect(() => {
-    console.log(borders);
-  }, [borders]);
   return (
     <>
       {Object.values(borders).map((border) =>
