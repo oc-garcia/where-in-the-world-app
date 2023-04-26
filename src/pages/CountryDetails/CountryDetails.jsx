@@ -17,6 +17,10 @@ export default function CountryDetails() {
     detailsData(countryName.name);
   }, [countryName]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   if (loaded) {
     return (
       <>
